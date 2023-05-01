@@ -1,3 +1,4 @@
 env/
+env_wsl/
 __pycache__/
 db.sqlite3
