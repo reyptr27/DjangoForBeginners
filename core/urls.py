@@ -18,6 +18,10 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    #default admin route django
     path('admin/', admin.site.urls),
-    path('', include('hello_world.urls')),
+    #chapter 2 hello_world app
+    # path('', include('hello_world.urls')),
+    #chapter 3 pages app
+    path('', include('pages.urls')),
 ]
