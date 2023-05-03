@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # my apps
     'hello_world.apps.HelloWorldConfig',
     'pages.apps.PagesConfig',
+    'message_board.apps.MessageBoardConfig',
 ]
 
 MIDDLEWARE = [
