@@ -26,4 +26,6 @@ urlpatterns = [
     path('', include('pages.urls')),
     #chapter 4 message board app
     path('message_board/', include('message_board.urls')),
+    #chapter 5 blog app
+    path('blog/', include('blog.urls')),
 ]
