@@ -1,10 +1,11 @@
 {% extends "base/base.html" %} {% block content %}
-<h1>Blog App</h1>
+<h1 class="app-name">Blog App</h1>
 <ul>
   {% for post in post_list %}
   <div class="blog-post">
     <h2><a href="{% url 'blogpage_detail' post.pk %}">{{ post.title }}</a></h2>
-    <p>{{ post.content|slice:":50" }}</p>
+    <small>Author : {{ post.author }}</small>
+    <p>{{ post.content|slice:":50" }} {% if post.content|length > 50 %}...{% endif %}</p>
   </div>
   {% endfor %}
 </ul>

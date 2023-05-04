@@ -1,3 +1,47 @@
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 18px;
+}
+
+.app-name {
+  border-bottom: 1px solid #999;
+  padding-bottom: 2rem;
+  display: flex;
+}
+
 header a {
+  color: red;
+  text-decoration: none;
+}
+
+/* .nav-left {
+  margin-right: auto;
+}
+
+.nav-right {
+  display: flex;
+  padding-top: 2rem;
+} */
+
+.blog-post {
+  margin-bottom: 2rem;
+}
+
+.blog-post h2 {
+  margin: 0.5rem 0;
+}
+
+.blog-post h2 a,
+.blog-post h2 a:visited {
+  color: blue;
+  text-decoration: none;
+}
+
+.blog-post p {
+  margin: 0;
+  font-weight: 400;
+}
+
+.blog-post h2 a:hover {
   color: red;
 }
