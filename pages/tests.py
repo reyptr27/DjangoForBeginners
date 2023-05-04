@@ -17,7 +17,7 @@ class HomePageTests(SimpleTestCase):
     
     def test_template_content(self):
         response = self.client.get(reverse("homepage"))
-        self.assertContains(response, "<h1>ini Homepage</h1>")
+        self.assertContains(response, '<h1 class="app-name">ini Homepage</h1>')
     
 
 class AboutPageTests(SimpleTestCase):
@@ -35,5 +35,5 @@ class AboutPageTests(SimpleTestCase):
     
     def test_template_content(self):
         response = self.client.get(reverse("aboutpage"))
-        self.assertContains(response, "<h1>ini Aboutpage</h1>")
+        self.assertContains(response, '<h1 class="app-name">ini Aboutpage</h1>')
     

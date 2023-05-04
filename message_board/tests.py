@@ -20,4 +20,4 @@ class PostTests (TestCase):
         response = self.client.get(reverse("message_board"))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "message_board/post.html")
-        self.assertContains(response, "<h1>Message Board</h1>")
+        self.assertContains(response, '<h1 class="app-name">Message Board</h1>')
