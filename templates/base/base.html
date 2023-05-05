@@ -10,11 +10,6 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
   </head>
   <body>
-    <header>
-      <a href="{% url 'homepage' %}">Homepage</a> | <a href="{% url 'aboutpage' %}">Aboutpage</a> | <a href="{% url 'message_board' %}">Message Board</a> |
-      <a href="{% url 'blogpage' %}">Blogpage</a>
-    </header>
+    {% block content %} {% endblock content %}
   </body>
 </html>
-
-{% block content %} {% endblock content %}

@@ -1,5 +1,4 @@
-{% extends "base/base.html" %} {% block content %}
-<h1 class="app-name">Blog App</h1>
+{% extends "base/base.html" %} {% block content %} {% include "base/navigation_blog.html" %}
 <ul>
   {% for post in post_list %}
   <div class="blog-post">

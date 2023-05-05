@@ -14,14 +14,14 @@ header a {
   text-decoration: none;
 }
 
-/* .nav-left {
+.nav-left {
   margin-right: auto;
 }
 
 .nav-right {
   display: flex;
   padding-top: 2rem;
-} */
+}
 
 .blog-post {
   margin-bottom: 2rem;
