@@ -1,11 +1,12 @@
-{% extends "base/base.html" %} {% block content %}
-
-<h1 class="app-name">Blog App Post Detail</h1>
+{% extends "base/base.html" %} {% block content %} {% include "base/navigation_blog.html" %}
 
 <div class="blog-post">
   <h2>{{ post.title }}</h2>
   <small>Author : {{ post.author }}</small>
   <p>{{ post.content }}</p>
 </div>
+
+<a href="{% url 'blogpage_edit' post.pk %}"> ? Edit blog post</a>
+<a href="{% url 'blogpage_delete' post.pk %}"> - Delete blog post</a>
 
 {% endblock content %}

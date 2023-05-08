@@ -5,6 +5,10 @@
   </div>
 
   <div class="nav-right">
-    <h3><a href="">+ Add new post</a></h3>
+    {% url 'blogpage' as blog_home %} {% if request.path == blog_home %}
+    <h3><a href="{% url 'blogpage_add' %}">+ Add new post</a></h3>
+    {% else %}
+    <h3><a href="{% url 'blogpage' %}">&lt; Back</a></h3>
+    {% endif %}
   </div>
 </header>

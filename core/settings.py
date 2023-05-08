@@ -31,12 +31,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
-#Secure HTTP_ONLY Session, Cookies, and CSRF
+# Secure HTTP_ONLY Session, Cookies, and CSRF
 SESSION_COOKIE_HTTPONLY = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_HTTPONLY = True
 CSRF_COOKIE_SECURE = True
-
 
 
 # Application definition

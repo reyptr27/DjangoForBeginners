@@ -40,7 +40,6 @@ class BlogTests(TestCase):
         response = self.client.get(reverse("blogpage"))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "blog/blog.html")
-        self.assertContains(response, '<h1 class="app-name">Blog App</h1>')
     
     def test_blog_detailview(self):
         response = self.client.get(reverse("blogpage_detail", kwargs={"pk": self.post.pk}))
@@ -48,8 +47,34 @@ class BlogTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(no_response.status_code, 404)
         self.assertTemplateUsed(response, "blog/blog_detail.html")
-        self.assertContains(response, '<h1 class="app-name">Blog App Post Detail</h1>')
         self.assertContains(response, 'Test Blog App')
         self.assertContains(response, 'testuser')
-            
     
+    def test_blog_createview(self):
+        response = self.client.post(
+            reverse("blogpage_add"),
+            {
+                "title" : "Test title",
+                "author" : self.user.id,
+                "content" : "New test post !",
+            },
+        )
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(post.objects.last().title, "Test title")
+        self.assertEqual(post.objects.last().content, "New test post !")
+            
+    def test_post_updateview(self):
+        response = self.client.post(
+            reverse("blogpage_edit", args="1"),
+            {
+                "title" : "Edited title",
+                "content" : "Edited content",
+            },
+        )
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(post.objects.last().title, "Edited title")
+        self.assertEqual(post.objects.last().content, "Edited content")
+    
+    def test_post_deleteview(self):
+        response = self.client.post(reverse("blogpage_delete", args="1"))
+        self.assertEqual(response.status_code, 302)

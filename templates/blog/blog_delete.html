@@ -1,0 +1,10 @@
+{% extends 'base/base.html' %} {% include 'base/navigation_blog.html' %} {% block content %}
+
+<h1>Delete Blog Post ?</h1>
+<form action="" method="post">
+  {% csrf_token %}
+  <p>Are you sure want to delete "{{ post.title }}" ?</p>
+  <input type="submit" value="delete" />
+</form>
+
+{% endblock content %}
